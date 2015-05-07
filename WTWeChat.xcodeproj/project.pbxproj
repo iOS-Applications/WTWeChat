@@ -12,7 +12,6 @@
 		573589491AF8F5E80036DD8C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 573589481AF8F5E80036DD8C /* ViewController.m */; };
 		5735894C1AF8F5E80036DD8C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5735894A1AF8F5E80036DD8C /* Main.storyboard */; };
 		5735894E1AF8F5E80036DD8C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5735894D1AF8F5E80036DD8C /* Images.xcassets */; };
-		573589511AF8F5E80036DD8C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5735894F1AF8F5E80036DD8C /* LaunchScreen.xib */; };
 		5735895D1AF8F5E80036DD8C /* WTWeChatTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5735895C1AF8F5E80036DD8C /* WTWeChatTests.m */; };
 		5735897B1AF8F70C0036DD8C /* DDAbstractDatabaseLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 5735896C1AF8F70C0036DD8C /* DDAbstractDatabaseLogger.m */; };
 		5735897C1AF8F70C0036DD8C /* DDASLLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 5735896E1AF8F70C0036DD8C /* DDASLLogger.m */; };
@@ -160,13 +159,12 @@
 		5735893D1AF8F5E80036DD8C /* WTWeChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WTWeChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		573589411AF8F5E80036DD8C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		573589421AF8F5E80036DD8C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		573589441AF8F5E80036DD8C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		573589451AF8F5E80036DD8C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		573589441AF8F5E80036DD8C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = ../../AppDelegate.h; sourceTree = "<group>"; };
+		573589451AF8F5E80036DD8C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = ../../AppDelegate.m; sourceTree = "<group>"; };
 		573589471AF8F5E80036DD8C /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		573589481AF8F5E80036DD8C /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		5735894B1AF8F5E80036DD8C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5735894D1AF8F5E80036DD8C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		573589501AF8F5E80036DD8C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		573589561AF8F5E80036DD8C /* WTWeChatTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WTWeChatTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5735895B1AF8F5E80036DD8C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5735895C1AF8F5E80036DD8C /* WTWeChatTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WTWeChatTests.m; sourceTree = "<group>"; };
@@ -485,13 +483,10 @@
 			isa = PBXGroup;
 			children = (
 				573589661AF8F67A0036DD8C /* Classes */,
-				573589441AF8F5E80036DD8C /* AppDelegate.h */,
-				573589451AF8F5E80036DD8C /* AppDelegate.m */,
 				573589471AF8F5E80036DD8C /* ViewController.h */,
 				573589481AF8F5E80036DD8C /* ViewController.m */,
 				5735894A1AF8F5E80036DD8C /* Main.storyboard */,
 				5735894D1AF8F5E80036DD8C /* Images.xcassets */,
-				5735894F1AF8F5E80036DD8C /* LaunchScreen.xib */,
 				573589401AF8F5E80036DD8C /* Supporting Files */,
 			);
 			path = WTWeChat;
@@ -527,6 +522,9 @@
 		573589661AF8F67A0036DD8C /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				57E2069A1AFB7C7700EFF293 /* Login */,
+				57E2069B1AFB7C7700EFF293 /* Main */,
+				57E2069C1AFB7C7700EFF293 /* Other */,
 				573589671AF8F67A0036DD8C /* Lib */,
 			);
 			path = Classes;
@@ -1324,6 +1322,29 @@
 			path = "XEP-0335";
 			sourceTree = "<group>";
 		};
+		57E2069A1AFB7C7700EFF293 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		57E2069B1AFB7C7700EFF293 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		57E2069C1AFB7C7700EFF293 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				573589441AF8F5E80036DD8C /* AppDelegate.h */,
+				573589451AF8F5E80036DD8C /* AppDelegate.m */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1406,7 +1427,6 @@
 			files = (
 				5735899F1AF8F84D0036DD8C /* build-libidn.sh in Resources */,
 				5735894C1AF8F5E80036DD8C /* Main.storyboard in Resources */,
-				573589511AF8F5E80036DD8C /* LaunchScreen.xib in Resources */,
 				573589821AF8F70C0036DD8C /* README.txt in Resources */,
 				5735894E1AF8F5E80036DD8C /* Images.xcassets in Resources */,
 			);
@@ -1584,14 +1604,6 @@
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		5735894F1AF8F5E80036DD8C /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				573589501AF8F5E80036DD8C /* Base */,
-			);
-			name = LaunchScreen.xib;
-			sourceTree = "<group>";
-		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -1675,6 +1687,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "WTWeChat/WTWeChat-PrefixHeader.pch";
 				HEADER_SEARCH_PATHS = (
@@ -1690,6 +1703,7 @@
 				);
 				OTHER_LDFLAGS = "-lxml2";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -1697,6 +1711,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "WTWeChat/WTWeChat-PrefixHeader.pch";
 				HEADER_SEARCH_PATHS = (
@@ -1712,6 +1727,7 @@
 				);
 				OTHER_LDFLAGS = "-lxml2";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -1768,6 +1784,7 @@
 				573589621AF8F5E80036DD8C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		573589631AF8F5E80036DD8C /* Build configuration list for PBXNativeTarget "WTWeChatTests" */ = {
 			isa = XCConfigurationList;
@@ -1776,6 +1793,7 @@
 				573589651AF8F5E80036DD8C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

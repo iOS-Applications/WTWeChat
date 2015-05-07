@@ -11,5 +11,18 @@
 
 // Include any system framework and library headers here that should be included in all compilation units.
 // You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+#ifdef __OBJC__
 #import <UIKit/UIKit.h>
+
+
+#ifdef DEBUG //处于开发阶段
+#define WTLog(...)NSLog(__VA_ARGS__)
+#else //处于发布阶段
+
+#define WTLog(...)
+
+#endif
+
+
+#endif
 #endif
