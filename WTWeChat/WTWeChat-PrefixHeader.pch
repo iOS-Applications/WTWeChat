@@ -13,10 +13,13 @@
 // You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
 #ifdef __OBJC__
 #import <UIKit/UIKit.h>
+#import "CategoryWF.h"
+#import "MBProgressHUD+MJ.h"
+#import "WTUserInfo.h"
 
 
 #ifdef DEBUG //处于开发阶段
-#define WTLog(...)NSLog(__VA_ARGS__)
+#define WTLog(...)NSLog(@"%s %d\n %@\n\n",__func__,__LINE__,[NSString stringWithFormat:__VA_ARGS__] )
 #else //处于发布阶段
 
 #define WTLog(...)

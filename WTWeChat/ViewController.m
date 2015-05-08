@@ -25,11 +25,6 @@
 }
 
 
--(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
-    
-    //做注销
-    AppDelegate *app= [UIApplication sharedApplication].delegate;
-    [app logout];
-}
+
 
 @end

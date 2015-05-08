@@ -8,6 +8,9 @@
 
 #import "AppDelegate.h"
 #import "XMPPFramework.h"
+#import "WTNavigationController.h"
+
+
 /**
  *  在AppDelegate实现登录
  1.初始化XMPPStream
@@ -18,7 +21,7 @@
 @interface AppDelegate ()<XMPPStreamDelegate>
 {
     XMPPStream *_xmppStream;
-
+    XMPPResultBlock _resultBlock;
 }
 /**
  *   1.初始化XMPPStream
@@ -42,8 +45,25 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    //程序一启动就连接到主机
-    [self connectToHost];
+
+    //设置导航栏的背景
+    [WTNavigationController setupNavTheme];
+    
+    //从沙盒加载用户的数据到单例
+    [[WTUserInfo sharedWTUserInfo] loadUserInfoFromSanbox];
+    
+    //是否登录过
+    if ([WTUserInfo sharedWTUserInfo].loginStatus) {
+        //回到主界面
+        
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        
+        self.window.rootViewController=storyboard.instantiateInitialViewController;
+        
+        //自动登录服务
+        [self xmppUserLogin:nil];
+        
+    }
     return YES;
 }
 
@@ -65,8 +85,14 @@
     }
     
     //设置登录用户JID
+    
+    //从单例WTUserInfo获取用户名
+    NSString *user =[WTUserInfo sharedWTUserInfo].user;
+
+    
+    
     //resource 标识用户登录的客户端 iPhone Android
-    XMPPJID *myJID=[XMPPJID jidWithUser:@"zhangweiting" domain:@"zhangweiting.local" resource:@"iphone"];
+    XMPPJID *myJID=[XMPPJID jidWithUser:user domain:@"zhangweiting.local" resource:@"iphone"];
     
     _xmppStream.myJID=myJID;
     
@@ -88,7 +114,10 @@
 -(void)sendPwdToHost{
     WTLog(@"再发送密码授权");
     NSError *err=nil;
-    [_xmppStream authenticateWithPassword:@"123456" error:&err];
+    //从WTUserInfo里获取密码
+    NSString *pwd =[WTUserInfo sharedWTUserInfo].pwd;
+    
+    [_xmppStream authenticateWithPassword:pwd error:&err];
     if (err) {
         WTLog(@"%@",err);
     }
@@ -119,6 +148,13 @@
 -(void)xmppStreamDidDisconnect:(XMPPStream *)sender withError:(NSError *)error{
     
     //如果有错误,代表连接失败
+    
+    
+    //如果没有错误,表示正常的断开连接(人为断开连接)
+    
+    if (error&&_resultBlock) {
+        _resultBlock(XMPPResultTypeNetErr);
+    }
     WTLog(@"与主机断开连接%@",error);
     
 }
@@ -127,7 +163,16 @@
 -(void)xmppStreamDidAuthenticate:(XMPPStream *)sender{
     WTLog(@"授权成功");
     [self sendOnlineToHost];
+    
+    
+    //判断block有无值,再回调给登录控制器
+    if (_resultBlock) {
+        _resultBlock(XMPPResultTypeLoginSuccess);
+    }
+    
+    
 }
+
 
 
 
@@ -136,21 +181,55 @@
     
     WTLog(@"授权失败%@",error);
     
+    //判断block有无值,再回调给登录控制器
+    if (_resultBlock) {
+        _resultBlock(XMPPResultTypeLoginFailure);
+    }
+    
 }
 
 
 #pragma mark -公共方法
 #pragma mark 注销
--(void)logout{
+-(void)xmppUserlogout{
     //1.发送离线消息
-    XMPPPresence *offline =[XMPPPresence presenceWithType:@""];
+
+    XMPPPresence *offline =[XMPPPresence presenceWithType:@"unavailable"];
     [_xmppStream sendElement:offline];
     
     //2.与服务器断开连接
     [_xmppStream disconnect];
     
+    //3.回到登录界面
+    
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Login" bundle:nil];
+    
+    self.window.rootViewController=storyboard.instantiateInitialViewController;
+    
+    //4.保存注销状态到沙盒
+    [WTUserInfo sharedWTUserInfo].loginStatus=NO;
+    [[WTUserInfo sharedWTUserInfo ] saveUserInfoToSanbox];
+    
     
 }
+#pragma mark 登录
+-(void)xmppUserLogin:(XMPPResultBlock)resultBlock{
+    
+    //先把block存起来
+    _resultBlock=resultBlock;
+    
+     //  reason Domain=XMPPStreamErrorDomain Code=1 "Attempting to connect while already connected or connecting." UserInfo=0x7fd86bf06700 {NSLocalizedDescription=Attempting to connect while already connected or connecting.}
+    //如果以前连接过服务,要断开
+    if (_xmppStream.isConnected) {
+        [_xmppStream disconnect];
+    }
+    
+    //程序一启动就连接到主机,成功后发送密码
+    [self connectToHost];
+
+    
+}
+
 
 
 @end
