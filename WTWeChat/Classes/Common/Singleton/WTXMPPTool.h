@@ -27,7 +27,10 @@ typedef void (^XMPPResultBlock)(XMPPResultType type);//XMPP请求结果的block
 
 
 @interface WTXMPPTool : NSObject<XMPPStreamDelegate>
+
 singleton_interface(WTXMPPTool)
+
+
 /**
  *  电子名片
  */
