@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		573589431AF8F5E80036DD8C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 573589421AF8F5E80036DD8C /* main.m */; };
 		573589461AF8F5E80036DD8C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 573589451AF8F5E80036DD8C /* AppDelegate.m */; };
-		573589491AF8F5E80036DD8C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 573589481AF8F5E80036DD8C /* ViewController.m */; };
 		5735894C1AF8F5E80036DD8C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5735894A1AF8F5E80036DD8C /* Main.storyboard */; };
 		5735894E1AF8F5E80036DD8C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5735894D1AF8F5E80036DD8C /* Images.xcassets */; };
 		5735895D1AF8F5E80036DD8C /* WTWeChatTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5735895C1AF8F5E80036DD8C /* WTWeChatTests.m */; };
@@ -195,8 +194,6 @@
 		573589421AF8F5E80036DD8C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		573589441AF8F5E80036DD8C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = ../../AppDelegate.h; sourceTree = "<group>"; };
 		573589451AF8F5E80036DD8C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = ../../AppDelegate.m; sourceTree = "<group>"; };
-		573589471AF8F5E80036DD8C /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		573589481AF8F5E80036DD8C /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		5735894B1AF8F5E80036DD8C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5735894D1AF8F5E80036DD8C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		573589561AF8F5E80036DD8C /* WTWeChatTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WTWeChatTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -586,8 +583,6 @@
 			isa = PBXGroup;
 			children = (
 				573589661AF8F67A0036DD8C /* Classes */,
-				573589471AF8F5E80036DD8C /* ViewController.h */,
-				573589481AF8F5E80036DD8C /* ViewController.m */,
 				5735894D1AF8F5E80036DD8C /* Images.xcassets */,
 				573589401AF8F5E80036DD8C /* Supporting Files */,
 			);
@@ -1717,7 +1712,6 @@
 				57358B2B1AF8F8CE0036DD8C /* XMPPMessageDeliveryReceipts.m in Sources */,
 				57358B1C1AF8F8CE0036DD8C /* NSString+XEP_0106.m in Sources */,
 				5735897F1AF8F70C0036DD8C /* DDTTYLogger.m in Sources */,
-				573589491AF8F5E80036DD8C /* ViewController.m in Sources */,
 				57E206EF1AFB992600EFF293 /* UIImageView+HighlightedWebCache.m in Sources */,
 				57358AEF1AF8F8CE0036DD8C /* XMPPIQ+JabberRPC.m in Sources */,
 				57E206FF1AFBB69800EFF293 /* WTNavigationController.m in Sources */,

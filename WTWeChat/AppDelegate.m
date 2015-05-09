@@ -9,7 +9,8 @@
 #import "AppDelegate.h"
 #import "XMPPFramework.h"
 #import "WTNavigationController.h"
-
+#import "DDLog.h"
+#import "DDTTYLogger.h"
 
 
 @interface AppDelegate ()
@@ -20,6 +21,14 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
+    // 沙盒的路径
+    NSString *path = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
+    NSLog(@"%@",path);
+    
+    // 打开XMPP的日志
+//    [DDLog addLogger:[DDTTYLogger sharedInstance]];
+
+    
     //设置导航栏的背景
     [WTNavigationController setupNavTheme];
     

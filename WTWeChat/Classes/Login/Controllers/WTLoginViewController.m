@@ -66,13 +66,18 @@
     id destVc=segue.destinationViewController;
     if ([destVc isKindOfClass:[WTNavigationController class]]) {
         WTNavigationController *registerNav=destVc;
-        //获取根控制器
-        WTRegisterViewController *registerVc= (WTRegisterViewController*)registerNav.topViewController;
-          //先确定是注册控制器再设置代理,这里可能是其他登录的控制器
-        if ([registerVc isKindOfClass:[WTRegisterViewController class]]) {
-              registerVc.delegate=self;
+        //先确定是注册控制器再设置代理,这里可能是其他登录的控制器
+        if ([registerNav.topViewController isKindOfClass:[WTRegisterViewController class]]) {
+            //获取根控制器
+            WTRegisterViewController *registerVc= (WTRegisterViewController*)registerNav.topViewController;
+            
+                registerVc.delegate=self;
+            
+
         }
-      
+        
+        
+        
     }
     
   

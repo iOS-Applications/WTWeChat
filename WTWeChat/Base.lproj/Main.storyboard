@@ -53,11 +53,11 @@
             </objects>
             <point key="canvasLocation" x="-164" y="-2600"/>
         </scene>
-        <!--Item-->
+        <!--微信-->
         <scene sceneID="Zj1-Ou-sl3">
             <objects>
                 <navigationController id="yfs-0C-Fcy" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="7Oj-pY-roV"/>
+                    <tabBarItem key="tabBarItem" title="微信" image="tabbar_mainframe" badgeValue="100" id="7Oj-pY-roV"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="1b3-k9-gJy">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -97,11 +97,11 @@
             </objects>
             <point key="canvasLocation" x="-62" y="-1822"/>
         </scene>
-        <!--Item-->
+        <!--通讯录-->
         <scene sceneID="YqK-Qc-k8p">
             <objects>
                 <navigationController id="dRb-be-3Td" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="gg2-iX-LFN"/>
+                    <tabBarItem key="tabBarItem" title="通讯录" image="tabbar_contacts" id="gg2-iX-LFN"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="VBT-FB-3yR">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -141,11 +141,11 @@
             </objects>
             <point key="canvasLocation" x="-20" y="-687"/>
         </scene>
-        <!--Item-->
+        <!--发现-->
         <scene sceneID="eNm-lO-tPs">
             <objects>
                 <navigationController id="UyX-uu-R0e" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="ouq-ds-zKK"/>
+                    <tabBarItem key="tabBarItem" title="发现" image="tabbar_discover" id="ouq-ds-zKK"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Mq9-PL-pD3">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -191,11 +191,11 @@
             </objects>
             <point key="canvasLocation" x="-76" y="107"/>
         </scene>
-        <!--Item-->
+        <!--我-->
         <scene sceneID="fTW-hq-rme">
             <objects>
                 <navigationController id="AxN-fv-ffS" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="2sB-zv-IRn"/>
+                    <tabBarItem key="tabBarItem" title="我" image="tabbar_me" badgeValue="6" id="2sB-zv-IRn"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="LfS-dE-VCp">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -209,4 +209,10 @@
             <point key="canvasLocation" x="-1000" y="211"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="tabbar_contacts" width="27" height="23"/>
+        <image name="tabbar_discover" width="23" height="23"/>
+        <image name="tabbar_mainframe" width="25" height="23"/>
+        <image name="tabbar_me" width="23" height="23"/>
+    </resources>
 </document>
