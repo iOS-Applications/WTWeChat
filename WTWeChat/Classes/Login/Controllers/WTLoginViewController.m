@@ -7,8 +7,10 @@
 //
 
 #import "WTLoginViewController.h"
+#import "WTRegisterViewController.h"
+#import "WTNavigationController.h"
 
-@interface WTLoginViewController ()
+@interface WTLoginViewController ()<WTRegisterViewControllerDelegate>
 @property (weak, nonatomic) IBOutlet UILabel *userLabel;
 @property (weak, nonatomic) IBOutlet UITextField *pwdField;
 - (IBAction)loginClick:(id)sender;
@@ -19,6 +21,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     
     //设置pwdField的锁image
     [self.pwdField addLeftViewWithImage:@"Card_Lock"];
@@ -49,9 +52,41 @@
     WTUserInfo *userInfo = [WTUserInfo sharedWTUserInfo];
     userInfo.user=self.userLabel.text;
     userInfo.pwd=self.pwdField.text;
-
-    
-    
+    //调用父类的登录
     [super login];
 }
+
+/**
+ *  跳转的segue
+ *
+ */
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    
+    //获取注册控制器
+    id destVc=segue.destinationViewController;
+    if ([destVc isKindOfClass:[WTNavigationController class]]) {
+        WTNavigationController *registerNav=destVc;
+        //获取根控制器
+        WTRegisterViewController *registerVc= (WTRegisterViewController*)registerNav.topViewController;
+          //先确定是注册控制器再设置代理,这里可能是其他登录的控制器
+        if ([registerVc isKindOfClass:[WTRegisterViewController class]]) {
+              registerVc.delegate=self;
+        }
+      
+    }
+    
+  
+    
+    
+}
+
+#pragma mark - WTRegisterViewControllerDelegate
+-(void)registerViewControllerDidFinishRegister{
+    
+    WTLog(@"完成注册!");
+    self.userLabel.text=[WTUserInfo sharedWTUserInfo].registerUser;
+    [MBProgressHUD showSuccess:@"注册完成,请输入密码登录~~" toView:self.view];
+    
+}
+
 @end

@@ -7,7 +7,7 @@
 //
 
 #import "WTOtherLoginViewController.h"
-#import "AppDelegate.h"
+
 
 @interface WTOtherLoginViewController ()
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *leftConstraint;

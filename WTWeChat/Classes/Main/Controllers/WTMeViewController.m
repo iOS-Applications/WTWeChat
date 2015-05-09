@@ -97,9 +97,9 @@
 
 - (IBAction)logout:(UIBarButtonItem *)sender {
     
-     AppDelegate *delegate=[UIApplication sharedApplication].delegate;
     
-    [delegate xmppUserlogout];
+    
+    [[WTXMPPTool sharedWTXMPPTool] xmppUserlogout];
     
     
 }

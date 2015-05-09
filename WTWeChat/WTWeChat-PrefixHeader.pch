@@ -16,6 +16,7 @@
 #import "CategoryWF.h"
 #import "MBProgressHUD+MJ.h"
 #import "WTUserInfo.h"
+#import "WTXMPPTool.h"
 
 
 #ifdef DEBUG //处于开发阶段

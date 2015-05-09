@@ -175,6 +175,8 @@
 		57E207061AFCA61700EFF293 /* WTLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E207051AFCA61700EFF293 /* WTLoginViewController.m */; };
 		57E2070B1AFCA88700EFF293 /* WTUserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E2070A1AFCA88700EFF293 /* WTUserInfo.m */; };
 		57E2070E1AFCB8D800EFF293 /* WTBaseLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E2070D1AFCB8D800EFF293 /* WTBaseLoginViewController.m */; };
+		57E207111AFCBCDE00EFF293 /* WTRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E207101AFCBCDE00EFF293 /* WTRegisterViewController.m */; };
+		57E207141AFD985400EFF293 /* WTXMPPTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E207131AFD985400EFF293 /* WTXMPPTool.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -533,6 +535,10 @@
 		57E2070A1AFCA88700EFF293 /* WTUserInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTUserInfo.m; sourceTree = "<group>"; };
 		57E2070C1AFCB8D800EFF293 /* WTBaseLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTBaseLoginViewController.h; sourceTree = "<group>"; };
 		57E2070D1AFCB8D800EFF293 /* WTBaseLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTBaseLoginViewController.m; sourceTree = "<group>"; };
+		57E2070F1AFCBCDE00EFF293 /* WTRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTRegisterViewController.h; sourceTree = "<group>"; };
+		57E207101AFCBCDE00EFF293 /* WTRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTRegisterViewController.m; sourceTree = "<group>"; };
+		57E207121AFD985400EFF293 /* WTXMPPTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTXMPPTool.h; sourceTree = "<group>"; };
+		57E207131AFD985400EFF293 /* WTXMPPTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTXMPPTool.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1458,6 +1464,8 @@
 				57E207051AFCA61700EFF293 /* WTLoginViewController.m */,
 				57E2070C1AFCB8D800EFF293 /* WTBaseLoginViewController.h */,
 				57E2070D1AFCB8D800EFF293 /* WTBaseLoginViewController.m */,
+				57E2070F1AFCBCDE00EFF293 /* WTRegisterViewController.h */,
+				57E207101AFCBCDE00EFF293 /* WTRegisterViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -1567,6 +1575,8 @@
 				57E207081AFCA82A00EFF293 /* Singleton.h */,
 				57E207091AFCA88700EFF293 /* WTUserInfo.h */,
 				57E2070A1AFCA88700EFF293 /* WTUserInfo.m */,
+				57E207121AFD985400EFF293 /* WTXMPPTool.h */,
+				57E207131AFD985400EFF293 /* WTXMPPTool.m */,
 			);
 			path = Singleton;
 			sourceTree = "<group>";
@@ -1695,6 +1705,7 @@
 				573589E61AF8F8890036DD8C /* XMPPXOAuth2Google.m in Sources */,
 				57E206E21AFB992600EFF293 /* MKAnnotationView+WebCache.m in Sources */,
 				57358AE51AF8F8CE0036DD8C /* XMPPGroupCoreDataStorageObject.m in Sources */,
+				57E207111AFCBCDE00EFF293 /* WTRegisterViewController.m in Sources */,
 				57358AE11AF8F8CE0036DD8C /* XMPPCoreDataStorage.m in Sources */,
 				57E206F81AFB994C00EFF293 /* MBProgressHUD+MJ.m in Sources */,
 				57358AEA1AF8F8CE0036DD8C /* XMPPResourceMemoryStorageObject.m in Sources */,
@@ -1823,6 +1834,7 @@
 				573589F21AF8F8890036DD8C /* DDList.m in Sources */,
 				57358B051AF8F8CE0036DD8C /* XMPPvCardCoreDataStorage.m in Sources */,
 				573589861AF8F73A0036DD8C /* GCDAsyncSocket.m in Sources */,
+				57E207141AFD985400EFF293 /* WTXMPPTool.m in Sources */,
 				573589801AF8F70C0036DD8C /* ContextFilterLogFormatter.m in Sources */,
 				57358AFE1AF8F8CE0036DD8C /* XMPPRoomMessageMemoryStorageObject.m in Sources */,
 				57E206E91AFB992600EFF293 /* SDWebImageManager.m in Sources */,
