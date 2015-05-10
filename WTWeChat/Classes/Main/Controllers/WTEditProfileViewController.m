@@ -7,6 +7,7 @@
 //
 
 #import "WTEditProfileViewController.h"
+#import "XMPPvCardTemp.h"
 
 @interface WTEditProfileViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *textField;
@@ -40,7 +41,11 @@
     
     //2.当前的控制器消失
     [self.navigationController popViewControllerAnimated:YES];
-    
+    //调用代理
+    if ([self.delegate respondsToSelector:@selector(editProfileViewControllerDelegateDidSave)]) {
+        //通知代理,点击按钮
+        [self.delegate editProfileViewControllerDelegateDidSave];
+    }
     
     
     

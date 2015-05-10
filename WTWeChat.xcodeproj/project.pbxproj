@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		570DEA801AFF33E0009F64C5 /* WTAddContactViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 570DEA7F1AFF33E0009F64C5 /* WTAddContactViewController.m */; };
 		573589431AF8F5E80036DD8C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 573589421AF8F5E80036DD8C /* main.m */; };
 		573589461AF8F5E80036DD8C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 573589451AF8F5E80036DD8C /* AppDelegate.m */; };
 		5735894C1AF8F5E80036DD8C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5735894A1AF8F5E80036DD8C /* Main.storyboard */; };
@@ -144,6 +145,7 @@
 		57358B381AF8F8CE0036DD8C /* NSXMLElement+XEP_0335.m in Sources */ = {isa = PBXBuildFile; fileRef = 57358ADF1AF8F8CE0036DD8C /* NSXMLElement+XEP_0335.m */; };
 		577814581AFDF85900A2BB7D /* WTProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 577814571AFDF85900A2BB7D /* WTProfileViewController.m */; };
 		5778145B1AFE056E00A2BB7D /* WTEditProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5778145A1AFE056E00A2BB7D /* WTEditProfileViewController.m */; };
+		5778145E1AFE3A9300A2BB7D /* WTContactsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5778145D1AFE3A9300A2BB7D /* WTContactsViewController.m */; };
 		57E2069E1AFB801D00EFF293 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57E2069D1AFB801D00EFF293 /* Login.storyboard */; };
 		57E206A21AFB879D00EFF293 /* WTOtherLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E206A11AFB879D00EFF293 /* WTOtherLoginViewController.m */; };
 		57E206B11AFB89EB00EFF293 /* UIButton+WF.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E206A61AFB89EB00EFF293 /* UIButton+WF.m */; };
@@ -191,6 +193,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		570DEA7E1AFF33E0009F64C5 /* WTAddContactViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTAddContactViewController.h; sourceTree = "<group>"; };
+		570DEA7F1AFF33E0009F64C5 /* WTAddContactViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTAddContactViewController.m; sourceTree = "<group>"; };
 		5735893D1AF8F5E80036DD8C /* WTWeChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WTWeChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		573589411AF8F5E80036DD8C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		573589421AF8F5E80036DD8C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -473,6 +477,8 @@
 		577814571AFDF85900A2BB7D /* WTProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTProfileViewController.m; sourceTree = "<group>"; };
 		577814591AFE056E00A2BB7D /* WTEditProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTEditProfileViewController.h; sourceTree = "<group>"; };
 		5778145A1AFE056E00A2BB7D /* WTEditProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTEditProfileViewController.m; sourceTree = "<group>"; };
+		5778145C1AFE3A9300A2BB7D /* WTContactsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTContactsViewController.h; sourceTree = "<group>"; };
+		5778145D1AFE3A9300A2BB7D /* WTContactsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTContactsViewController.m; sourceTree = "<group>"; };
 		57E2069D1AFB801D00EFF293 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		57E206A01AFB879D00EFF293 /* WTOtherLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTOtherLoginViewController.h; sourceTree = "<group>"; };
 		57E206A11AFB879D00EFF293 /* WTOtherLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTOtherLoginViewController.m; sourceTree = "<group>"; };
@@ -896,8 +902,8 @@
 				573589FE1AF8F8CE0036DD8C /* CoreDataStorage */,
 				57358A021AF8F8CE0036DD8C /* GoogleSharedStatus */,
 				57358A051AF8F8CE0036DD8C /* ProcessOne */,
-				57358A081AF8F8CE0036DD8C /* Reconnect */,
-				57358A0B1AF8F8CE0036DD8C /* Roster */,
+				57358A081AF8F8CE0036DD8C /* Reconnect(自动连接模块) */,
+				57358A0B1AF8F8CE0036DD8C /* Roster(花名册模块好友列表) */,
 				57358A231AF8F8CE0036DD8C /* SystemInputActivityMonitor */,
 				57358A261AF8F8CE0036DD8C /* XEP-0009 */,
 				57358A2D1AF8F8CE0036DD8C /* XEP-0012 */,
@@ -969,16 +975,17 @@
 			path = ProcessOne;
 			sourceTree = "<group>";
 		};
-		57358A081AF8F8CE0036DD8C /* Reconnect */ = {
+		57358A081AF8F8CE0036DD8C /* Reconnect(自动连接模块) */ = {
 			isa = PBXGroup;
 			children = (
 				57358A091AF8F8CE0036DD8C /* XMPPReconnect.h */,
 				57358A0A1AF8F8CE0036DD8C /* XMPPReconnect.m */,
 			);
+			name = "Reconnect(自动连接模块)";
 			path = Reconnect;
 			sourceTree = "<group>";
 		};
-		57358A0B1AF8F8CE0036DD8C /* Roster */ = {
+		57358A0B1AF8F8CE0036DD8C /* Roster(花名册模块好友列表) */ = {
 			isa = PBXGroup;
 			children = (
 				57358A0C1AF8F8CE0036DD8C /* CoreDataStorage */,
@@ -989,6 +996,7 @@
 				57358A211AF8F8CE0036DD8C /* XMPPRosterPrivate.h */,
 				57358A221AF8F8CE0036DD8C /* XMPPUser.h */,
 			);
+			name = "Roster(花名册模块好友列表)";
 			path = Roster;
 			sourceTree = "<group>";
 		};
@@ -1570,6 +1578,10 @@
 				577814571AFDF85900A2BB7D /* WTProfileViewController.m */,
 				577814591AFE056E00A2BB7D /* WTEditProfileViewController.h */,
 				5778145A1AFE056E00A2BB7D /* WTEditProfileViewController.m */,
+				5778145C1AFE3A9300A2BB7D /* WTContactsViewController.h */,
+				5778145D1AFE3A9300A2BB7D /* WTContactsViewController.m */,
+				570DEA7E1AFF33E0009F64C5 /* WTAddContactViewController.h */,
+				570DEA7F1AFF33E0009F64C5 /* WTAddContactViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -1814,6 +1826,7 @@
 				57358B131AF8F8CE0036DD8C /* XMPPPubSub.m in Sources */,
 				57358B181AF8F8CE0036DD8C /* XMPPDateTimeProfiles.m in Sources */,
 				57358B201AF8F8CE0036DD8C /* XMPPCapsResourceCoreDataStorageObject.m in Sources */,
+				5778145E1AFE3A9300A2BB7D /* WTContactsViewController.m in Sources */,
 				57E206A21AFB879D00EFF293 /* WTOtherLoginViewController.m in Sources */,
 				57358AE01AF8F8CE0036DD8C /* XMPPBandwidthMonitor.m in Sources */,
 				573589E41AF8F8890036DD8C /* XMPPPlainAuthentication.m in Sources */,
@@ -1833,6 +1846,7 @@
 				57E206E71AFB992600EFF293 /* SDWebImageDownloader.m in Sources */,
 				57358AF91AF8F8CE0036DD8C /* XMPPRoomHybrid.xcdatamodeld in Sources */,
 				573589F61AF8F8890036DD8C /* XMPPSRVResolver.m in Sources */,
+				570DEA801AFF33E0009F64C5 /* WTAddContactViewController.m in Sources */,
 				573589431AF8F5E80036DD8C /* main.m in Sources */,
 				57358B0F1AF8F8CE0036DD8C /* XMPPvCardTempTel.m in Sources */,
 				57358AF31AF8F8CE0036DD8C /* XMPPLastActivity.m in Sources */,

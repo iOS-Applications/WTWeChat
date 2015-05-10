@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "Singleton.h"
-
+static NSString *domain = @"zhangweiting.local";
 @interface WTUserInfo : NSObject
 
 singleton_interface(WTUserInfo);
@@ -26,6 +26,7 @@ singleton_interface(WTUserInfo);
 @property (nonatomic, copy) NSString *registerPwd;//注册的密码
 
 
+@property (nonatomic, copy) NSString *jid;
 /**
  *  从沙盒里获取用户数据
  */

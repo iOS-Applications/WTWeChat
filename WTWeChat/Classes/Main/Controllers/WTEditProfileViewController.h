@@ -8,9 +8,20 @@
 
 #import <UIKit/UIKit.h>
 
+
+
+@protocol WTEditProfileViewControllerDelegate <NSObject>
+
+@optional
+-(void)editProfileViewControllerDelegateDidSave;
+
+@end
+
 @interface WTEditProfileViewController : UITableViewController
 
 
 @property (nonatomic,strong) UITableViewCell *cell;
+
+@property (nonatomic,weak) id<WTEditProfileViewControllerDelegate> delegate;
 
 @end

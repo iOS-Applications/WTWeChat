@@ -18,8 +18,14 @@
  */
 @interface WTXMPPTool ()
 {
-    XMPPStream *_xmppStream;
+   
     XMPPResultBlock _resultBlock;
+    
+    
+    /**
+     *  自动连接模块
+     */
+    XMPPReconnect *_reconnect;
     
     /**
      *  电子名片的数据存储
@@ -29,8 +35,7 @@
      *  头像模块
      */
     XMPPvCardAvatarModule *_avatar;
-
-}
+   }
 /**
  *   1.初始化XMPPStream
  */
@@ -64,6 +69,11 @@ singleton_implementation(WTXMPPTool)
     
     
 #warning 每一个模块添加后都要激活
+    //添加自动连接模块
+    _reconnect =[[XMPPReconnect alloc]init];
+    //激活
+    [_reconnect activate:_xmppStream];
+    
     //添加电子名片模块
     _vCardStorage = [XMPPvCardCoreDataStorage sharedInstance];
     _vCard = [[XMPPvCardTempModule alloc] initWithvCardStorage:_vCardStorage];
@@ -76,12 +86,45 @@ singleton_implementation(WTXMPPTool)
     //激活
     [_avatar activate:_xmppStream];
 
+    //添加花名册模块(获取好友列表)
+    _rosterStorage=[[XMPPRosterCoreDataStorage alloc]init];
+    _roster=[[XMPPRoster alloc] initWithRosterStorage:_rosterStorage];
+    //激活
+    [_roster activate:_xmppStream];
     
     
     //设置代理
     [_xmppStream addDelegate:self delegateQueue:dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)];
     
 }
+
+#pragma mark 释放xmppStream相关的资源
+-(void)teardownXmpp{
+    //移除代理
+    [_xmppStream removeDelegate:self];
+    //停止模块
+    [_reconnect deactivate];
+    [_vCard deactivate];
+    [_avatar deactivate];
+    [_roster deactivate];
+    //断开连接
+    [_xmppStream disconnect];
+    //清空资源
+    _reconnect =nil;
+    _vCard=nil;
+    _vCardStorage=nil;
+    _avatar=nil;
+    _roster=nil;
+    _rosterStorage=nil;
+    _xmppStream=nil;
+    
+    
+    
+    
+    
+}
+
+
 #pragma mark 连接到服务器(传一个JID)
 -(void)connectToHost{
     WTLog(@"开始连接到服务器");
@@ -291,6 +334,12 @@ singleton_implementation(WTXMPPTool)
     [self connectToHost];
     
     
+    
+}
+
+
+-(void)dealloc{
+    [self teardownXmpp];
     
 }
 

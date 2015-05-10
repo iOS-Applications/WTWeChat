@@ -33,4 +33,7 @@ singleton_implementation(WTUserInfo)
     self.pwd = [defaults objectForKey:PwdKey];
 }
 
+-(NSString *)jid{
+    return [NSString stringWithFormat:@"%@@%@",self.user,domain];
+}
 @end

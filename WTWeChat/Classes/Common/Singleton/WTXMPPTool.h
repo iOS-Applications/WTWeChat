@@ -30,11 +30,21 @@ typedef void (^XMPPResultBlock)(XMPPResultType type);//XMPP请求结果的block
 
 singleton_interface(WTXMPPTool)
 
-
+@property (nonatomic,strong)  XMPPStream *xmppStream;
 /**
  *  电子名片
  */
 @property (nonatomic, strong)XMPPvCardTempModule *vCard;
+
+/**
+ *  花名册模块
+ */
+@property (nonatomic, strong)XMPPRosterCoreDataStorage *rosterStorage;
+/**
+ *  花名册数据存储
+ */
+@property (nonatomic, strong)XMPPRoster *roster;
+
 /**
  *  注册标识 YES 注册/NO 登录
  */

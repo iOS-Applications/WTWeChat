@@ -10,7 +10,7 @@
 #import "XMPPvCardTemp.h"
 #import "WTEditProfileViewController.h"
 
-@interface WTProfileViewController ()<UIActionSheetDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate>
+@interface WTProfileViewController ()<UIActionSheetDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate,WTEditProfileViewControllerDelegate>
 /**
  *  头像
  */
@@ -124,6 +124,7 @@
     if ([destVc isKindOfClass:[WTEditProfileViewController class]]) {
         WTEditProfileViewController *editVc=destVc;
         editVc.cell=sender;
+        editVc.delegate=self;
     }
     
 }
@@ -166,7 +167,55 @@
     self.headView.image=image;
     //隐藏当前模态窗口
     [self dismissViewControllerAnimated:YES completion:nil];
+    //更新到服务器
+    [self editProfileViewControllerDelegateDidSave];
+    
     
 }
+
+
+#pragma mark -WTEditProfileViewControllerDelegate
+-(void)editProfileViewControllerDelegateDidSave{
+    //更新到服务器
+    
+    //获取当前的电子名片信息
+    XMPPvCardTemp *myvCard = [WTXMPPTool sharedWTXMPPTool].vCard.myvCardTemp;
+    
+    // 图片
+    myvCard.photo = UIImagePNGRepresentation(self.headView.image);
+    
+    // 昵称
+    myvCard.nickname = self.nickNameLabel.text;
+    
+    // 公司
+    myvCard.orgName = self.orgNameLabel.text;
+    
+    // 部门
+    if (self.orgunitLabel.text.length > 0) {
+        myvCard.orgUnits = @[self.orgunitLabel.text];
+    }
+    
+    
+    // 职位
+    myvCard.title = self.titleLabel.text;
+    
+    
+    // 电话
+    myvCard.note =  self.phoneLabel.text;
+    
+    // 邮件
+    myvCard.mailer = self.emailLabel.text;
+    
+    
+    //更新 这个方法内部会实现数据上传到服务，无需程序自己操作
+    [[WTXMPPTool sharedWTXMPPTool].vCard updateMyvCardTemp:myvCard];
+
+    
+    
+    
+}
+
+
+
 
 @end
