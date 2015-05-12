@@ -26,58 +26,6 @@
             </objects>
             <point key="canvasLocation" x="-2545" y="-1371"/>
         </scene>
-        <!--消息-->
-        <scene sceneID="Amz-Kp-e1U">
-            <objects>
-                <tableViewController id="pRN-FM-hAy" userLabel="消息" customClass="WTHistoryViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="5Pu-fA-tNE">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Ypg-Up-974">
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ypg-Up-974" id="XYb-aS-mXc">
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="pRN-FM-hAy" id="ecK-OE-jMl"/>
-                            <outlet property="delegate" destination="pRN-FM-hAy" id="JJH-lB-w6u"/>
-                        </connections>
-                    </tableView>
-                    <tabBarItem key="tabBarItem" title="Item" id="BSM-cF-JfX"/>
-                    <navigationItem key="navigationItem" title="微信" id="GLh-x2-5Qx">
-                        <barButtonItem key="leftBarButtonItem" style="plain" id="Qsz-e7-vdi">
-                            <view key="customView" contentMode="scaleToFill" id="98l-zd-5CB">
-                                <rect key="frame" x="0.0" y="0.0" width="133" height="33"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="ffd-FN-Dgq">
-                                        <rect key="frame" x="8" y="8" width="20" height="20"/>
-                                        <color key="color" red="0.60369460590000001" green="0.94347774620000002" blue="0.49536972280000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    </activityIndicatorView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="正在登陆中...." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rHA-Tb-0aO">
-                                        <rect key="frame" x="42" y="12" width="105" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                        <color key="textColor" red="0.423383326" green="0.76801146529999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
-                        </barButtonItem>
-                    </navigationItem>
-                    <connections>
-                        <outlet property="indicatorView" destination="ffd-FN-Dgq" id="uTH-CF-gVY"/>
-                        <outlet property="loadView" destination="98l-zd-5CB" id="4EL-l6-FdF"/>
-                    </connections>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="2Xt-tv-2bg" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-164" y="-2600"/>
-        </scene>
         <!--微信-->
         <scene sceneID="Zj1-Ou-sl3">
             <objects>
@@ -88,12 +36,31 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="pRN-FM-hAy" kind="relationship" relationship="rootViewController" id="qZE-se-DHv"/>
+                        <segue destination="2F1-yM-16k" kind="relationship" relationship="rootViewController" id="Yd4-pR-L6e"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mof-xs-y7W" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1014" y="-2623"/>
+        </scene>
+        <!--微信-->
+        <scene sceneID="x8V-l9-4mC">
+            <objects>
+                <viewController id="2F1-yM-16k" customClass="WTHistoryViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ArY-iU-qoH"/>
+                        <viewControllerLayoutGuide type="bottom" id="ehg-0d-d5p"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="dAv-Je-xz2">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="微信" id="pyr-0y-UKk"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="g0y-Ki-gKq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-158" y="-2752"/>
         </scene>
         <!--通讯录-->
         <scene sceneID="gMR-js-Odc">

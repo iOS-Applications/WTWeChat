@@ -9,8 +9,10 @@
 #import "WTHistoryViewController.h"
 
 @interface WTHistoryViewController ()
-@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *indicatorView;
-@property (weak, nonatomic) IBOutlet UIView *loadView;
+
+//注意:loadview是不能名这个名字的,会覆盖原来系统自带的属性
+//@property (weak, nonatomic) IBOutlet UIView *loadView;
+
 
 @end
 
@@ -34,22 +36,24 @@
         
         switch (status) {
             case XMPPResultTypeConnecting://正在连接
-                [self.indicatorView startAnimating];
+                
+                [MBProgressHUD showMessage:@"正在自动登录中~请稍等!" toView:self.view];
                 break;
             case XMPPResultTypeNetErr://连接失败
-                [self.indicatorView stopAnimating];
-                self.loadView.hidden=YES;
+                [MBProgressHUD hideHUDForView:self.view animated:YES];
                 [MBProgressHUD showError:@"连接失败" toView:self.view];
                 break;
             case XMPPResultTypeLoginSuccess://登录成功也就是连接成功
-                [self.indicatorView stopAnimating];
+                
+                [MBProgressHUD hideHUDForView:self.view animated:YES];
                 [MBProgressHUD showSuccess:@"连接成功" toView:self.view];
-                self.loadView.hidden=YES;
+                
                 break;
             case XMPPResultTypeLoginFailure://登录失败
-                [self.indicatorView stopAnimating];
+                
+                [MBProgressHUD hideHUDForView:self.view animated:YES];
                 [MBProgressHUD showError:@"登录失败" toView:self.view];
-                self.loadView.hidden=YES;
+                
                 break;
             default:
                 break;
@@ -57,6 +61,14 @@
     });
     
 }
+
+
+
+
+
+
+
+
 
 
 @end

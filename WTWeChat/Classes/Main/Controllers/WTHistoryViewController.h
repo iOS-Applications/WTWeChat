@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface WTHistoryViewController : UITableViewController
+@interface WTHistoryViewController : UIViewController
 
 @end
