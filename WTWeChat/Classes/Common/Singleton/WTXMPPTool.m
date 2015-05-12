@@ -8,7 +8,7 @@
 
 #import "WTXMPPTool.h"
 
-
+NSString *const WTLoginStatusChangeNotification = @"WCLoginStatusNotification";
 /**
  *  在AppDelegate实现登录
  1.初始化XMPPStream
@@ -35,6 +35,11 @@
      *  头像模块
      */
     XMPPvCardAvatarModule *_avatar;
+    /**
+     *  聊天模块
+     */
+    XMPPMessageArchiving *_msgArchiving;
+
    }
 /**
  *   1.初始化XMPPStream
@@ -92,6 +97,10 @@ singleton_implementation(WTXMPPTool)
     //激活
     [_roster activate:_xmppStream];
     
+    //添加聊天模块
+    _msgStorage=[[XMPPMessageArchivingCoreDataStorage alloc]init];
+    _msgArchiving =[[XMPPMessageArchiving alloc]initWithMessageArchivingStorage:_msgStorage];
+    [_msgArchiving activate:_xmppStream];
     
     //设置代理
     [_xmppStream addDelegate:self delegateQueue:dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)];
@@ -107,6 +116,7 @@ singleton_implementation(WTXMPPTool)
     [_vCard deactivate];
     [_avatar deactivate];
     [_roster deactivate];
+    [_msgArchiving deactivate];
     //断开连接
     [_xmppStream disconnect];
     //清空资源
@@ -116,6 +126,8 @@ singleton_implementation(WTXMPPTool)
     _avatar=nil;
     _roster=nil;
     _rosterStorage=nil;
+    _msgArchiving=nil;
+    _msgStorage=nil;
     _xmppStream=nil;
     
     
@@ -131,9 +143,10 @@ singleton_implementation(WTXMPPTool)
     if (!_xmppStream) {
         [self setupXMPPStream];
     }
+    // 发送通知【正在连接】
+    [self postNotification:XMPPResultTypeConnecting];
     
     //设置登录用户JID
-    
     //从单例WTUserInfo获取用户名
     NSString *user=nil;
     if(self.registerOperation){
@@ -185,6 +198,17 @@ singleton_implementation(WTXMPPTool)
     [_xmppStream sendElement:presence];
     
 }
+/**
+ * 通知 WTHistoryViewControllers 登录状态
+ *
+ */
+-(void)postNotification:(XMPPResultType)resultType{
+    
+    // 将登录状态放入字典，然后通过通知传递
+    NSDictionary *userInfo = @{@"loginStatus":@(resultType)};
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:WTLoginStatusChangeNotification object:nil userInfo:userInfo];
+}
 
 
 
@@ -218,6 +242,11 @@ singleton_implementation(WTXMPPTool)
     if (error&&_resultBlock) {
         _resultBlock(XMPPResultTypeNetErr);
     }
+    if (error) {
+        //通知 【网络不稳定】
+        [self postNotification:XMPPResultTypeNetErr];
+    }
+
     WTLog(@"与主机断开连接%@",error);
     
 }
@@ -233,7 +262,7 @@ singleton_implementation(WTXMPPTool)
         _resultBlock(XMPPResultTypeLoginSuccess);
     }
     
-    
+     [self postNotification:XMPPResultTypeLoginSuccess];
 }
 
 
@@ -248,7 +277,8 @@ singleton_implementation(WTXMPPTool)
     if (_resultBlock) {
         _resultBlock(XMPPResultTypeLoginFailure);
     }
-    
+    [self postNotification:XMPPResultTypeLoginFailure];
+
 }
 
 #pragma mark 注册成功

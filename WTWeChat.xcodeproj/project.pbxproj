@@ -146,6 +146,11 @@
 		577814581AFDF85900A2BB7D /* WTProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 577814571AFDF85900A2BB7D /* WTProfileViewController.m */; };
 		5778145B1AFE056E00A2BB7D /* WTEditProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5778145A1AFE056E00A2BB7D /* WTEditProfileViewController.m */; };
 		5778145E1AFE3A9300A2BB7D /* WTContactsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5778145D1AFE3A9300A2BB7D /* WTContactsViewController.m */; };
+		577A2BF91B00AEB300EBA22D /* WTHistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 577A2BF81B00AEB300EBA22D /* WTHistoryViewController.m */; };
+		57ABA9091AFF5876006FB93D /* WTChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57ABA9081AFF5876006FB93D /* WTChatViewController.m */; };
+		57ABA90D1AFF5927006FB93D /* WTInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = 57ABA90C1AFF5927006FB93D /* WTInputView.m */; };
+		57ABA90F1AFF5967006FB93D /* WTInputView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 57ABA90E1AFF5967006FB93D /* WTInputView.xib */; };
+		57ABA9131AFF97E7006FB93D /* HttpTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 57ABA9121AFF97E7006FB93D /* HttpTool.m */; };
 		57E2069E1AFB801D00EFF293 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57E2069D1AFB801D00EFF293 /* Login.storyboard */; };
 		57E206A21AFB879D00EFF293 /* WTOtherLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E206A11AFB879D00EFF293 /* WTOtherLoginViewController.m */; };
 		57E206B11AFB89EB00EFF293 /* UIButton+WF.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E206A61AFB89EB00EFF293 /* UIButton+WF.m */; };
@@ -479,6 +484,15 @@
 		5778145A1AFE056E00A2BB7D /* WTEditProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTEditProfileViewController.m; sourceTree = "<group>"; };
 		5778145C1AFE3A9300A2BB7D /* WTContactsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTContactsViewController.h; sourceTree = "<group>"; };
 		5778145D1AFE3A9300A2BB7D /* WTContactsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTContactsViewController.m; sourceTree = "<group>"; };
+		577A2BF71B00AEB300EBA22D /* WTHistoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTHistoryViewController.h; sourceTree = "<group>"; };
+		577A2BF81B00AEB300EBA22D /* WTHistoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTHistoryViewController.m; sourceTree = "<group>"; };
+		57ABA9071AFF5876006FB93D /* WTChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTChatViewController.h; sourceTree = "<group>"; };
+		57ABA9081AFF5876006FB93D /* WTChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTChatViewController.m; sourceTree = "<group>"; };
+		57ABA90B1AFF5927006FB93D /* WTInputView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTInputView.h; sourceTree = "<group>"; };
+		57ABA90C1AFF5927006FB93D /* WTInputView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTInputView.m; sourceTree = "<group>"; };
+		57ABA90E1AFF5967006FB93D /* WTInputView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WTInputView.xib; sourceTree = "<group>"; };
+		57ABA9111AFF97E7006FB93D /* HttpTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HttpTool.h; sourceTree = "<group>"; };
+		57ABA9121AFF97E7006FB93D /* HttpTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HttpTool.m; sourceTree = "<group>"; };
 		57E2069D1AFB801D00EFF293 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		57E206A01AFB879D00EFF293 /* WTOtherLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTOtherLoginViewController.h; sourceTree = "<group>"; };
 		57E206A11AFB879D00EFF293 /* WTOtherLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTOtherLoginViewController.m; sourceTree = "<group>"; };
@@ -1437,6 +1451,25 @@
 			path = "XEP-0335";
 			sourceTree = "<group>";
 		};
+		57ABA90A1AFF590C006FB93D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				57ABA90B1AFF5927006FB93D /* WTInputView.h */,
+				57ABA90C1AFF5927006FB93D /* WTInputView.m */,
+				57ABA90E1AFF5967006FB93D /* WTInputView.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		57ABA9101AFF97DD006FB93D /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				57ABA9111AFF97E7006FB93D /* HttpTool.h */,
+				57ABA9121AFF97E7006FB93D /* HttpTool.m */,
+			);
+			path = Tool;
+			sourceTree = "<group>";
+		};
 		57E2069A1AFB7C7700EFF293 /* Login */ = {
 			isa = PBXGroup;
 			children = (
@@ -1449,6 +1482,7 @@
 		57E2069B1AFB7C7700EFF293 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				57ABA90A1AFF590C006FB93D /* View */,
 				57E207001AFC9FB600EFF293 /* Controllers */,
 				5735894A1AF8F5E80036DD8C /* Main.storyboard */,
 			);
@@ -1554,6 +1588,7 @@
 		57E206FB1AFBB59C00EFF293 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				57ABA9101AFF97DD006FB93D /* Tool */,
 				57E207071AFCA81F00EFF293 /* Singleton */,
 				57E206FC1AFBB59C00EFF293 /* Controllers */,
 			);
@@ -1582,6 +1617,10 @@
 				5778145D1AFE3A9300A2BB7D /* WTContactsViewController.m */,
 				570DEA7E1AFF33E0009F64C5 /* WTAddContactViewController.h */,
 				570DEA7F1AFF33E0009F64C5 /* WTAddContactViewController.m */,
+				57ABA9071AFF5876006FB93D /* WTChatViewController.h */,
+				57ABA9081AFF5876006FB93D /* WTChatViewController.m */,
+				577A2BF71B00AEB300EBA22D /* WTHistoryViewController.h */,
+				577A2BF81B00AEB300EBA22D /* WTHistoryViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -1683,6 +1722,7 @@
 				5735894C1AF8F5E80036DD8C /* Main.storyboard in Resources */,
 				573589821AF8F70C0036DD8C /* README.txt in Resources */,
 				57E2069E1AFB801D00EFF293 /* Login.storyboard in Resources */,
+				57ABA90F1AFF5967006FB93D /* WTInputView.xib in Resources */,
 				5735894E1AF8F5E80036DD8C /* Images.xcassets in Resources */,
 				57E206F91AFB994C00EFF293 /* MBProgressHUD.bundle in Resources */,
 			);
@@ -1749,9 +1789,11 @@
 				5778145B1AFE056E00A2BB7D /* WTEditProfileViewController.m in Sources */,
 				57358AE31AF8F8CE0036DD8C /* XMPPProcessOne.m in Sources */,
 				57E206B41AFB89EB00EFF293 /* UIStoryboard+WF.m in Sources */,
+				57ABA9091AFF5876006FB93D /* WTChatViewController.m in Sources */,
 				573589941AF8F7660036DD8C /* NSString+DDXML.m in Sources */,
 				57358B221AF8F8CE0036DD8C /* XMPPMessageArchiving.xcdatamodeld in Sources */,
 				57358B321AF8F8CE0036DD8C /* XEP_0223.m in Sources */,
+				577A2BF91B00AEB300EBA22D /* WTHistoryViewController.m in Sources */,
 				573589EC1AF8F8890036DD8C /* XMPPJID.m in Sources */,
 				57358B161AF8F8CE0036DD8C /* XMPPMessage+XEP_0066.m in Sources */,
 				57358B231AF8F8CE0036DD8C /* XMPPMessageArchiving_Contact_CoreDataObject.m in Sources */,
@@ -1800,6 +1842,7 @@
 				57358B2C1AF8F8CE0036DD8C /* XMPPBlocking.m in Sources */,
 				57358B341AF8F8CE0036DD8C /* XMPPMessage+XEP_0224.m in Sources */,
 				57358AE41AF8F8CE0036DD8C /* XMPPReconnect.m in Sources */,
+				57ABA9131AFF97E7006FB93D /* HttpTool.m in Sources */,
 				573589F31AF8F8890036DD8C /* GCDMulticastDelegate.m in Sources */,
 				57358AFD1AF8F8CE0036DD8C /* XMPPRoomMemoryStorage.m in Sources */,
 				57358B351AF8F8CE0036DD8C /* NSXMLElement+XEP_0297.m in Sources */,
@@ -1823,6 +1866,7 @@
 				57358AEC1AF8F8CE0036DD8C /* XMPPUserMemoryStorageObject.m in Sources */,
 				573589F41AF8F8890036DD8C /* RFImageToDataTransformer.m in Sources */,
 				57358AF11AF8F8CE0036DD8C /* XMPPJabberRPCModule.m in Sources */,
+				57ABA90D1AFF5927006FB93D /* WTInputView.m in Sources */,
 				57358B131AF8F8CE0036DD8C /* XMPPPubSub.m in Sources */,
 				57358B181AF8F8CE0036DD8C /* XMPPDateTimeProfiles.m in Sources */,
 				57358B201AF8F8CE0036DD8C /* XMPPCapsResourceCoreDataStorageObject.m in Sources */,

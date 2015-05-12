@@ -83,7 +83,15 @@
     //邮箱
     //    self.emailLabel.text=myVCard.emailAddresses;
     //用mailer充当邮箱
-    self.emailLabel.text=myVCard.mailer;
+//    self.emailLabel.text=myVCard.mailer;
+    
+    //邮箱解析
+    if (myVCard.emailAddresses.count > 0) {
+        //不管有多少个邮件，只取第一个
+        self.emailLabel.text = myVCard.emailAddresses[0];
+    }
+    
+
 }
 
 - (void)viewDidLoad {
@@ -204,7 +212,12 @@
     myvCard.note =  self.phoneLabel.text;
     
     // 邮件
-    myvCard.mailer = self.emailLabel.text;
+    //myvCard.mailer = self.emailLabel.text;
+    if (self.emailLabel.text.length > 0) {
+        myvCard.emailAddresses = @[self.emailLabel.text];
+        WTLog(@"%@",@[self.emailLabel.text]);
+    }
+
     
     
     //更新 这个方法内部会实现数据上传到服务，无需程序自己操作

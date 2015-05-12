@@ -7,6 +7,8 @@
 //
 
 #import "WTContactsViewController.h"
+#import "WTChatViewController.h"
+#import "WTChatViewController.h"
 
 @interface WTContactsViewController ()<NSFetchedResultsControllerDelegate>
 {
@@ -114,6 +116,29 @@
         
         XMPPJID *freindJid = friend.jid;
         [[WTXMPPTool sharedWTXMPPTool].roster removeUser:freindJid];
+    }
+}
+
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    //获取好友
+    XMPPUserCoreDataStorageObject *friend = _resultsContrl.fetchedObjects[indexPath.row];
+
+    //选中表格进入聊天界面
+    [self performSegueWithIdentifier:@"ChatSegue" sender:friend.jid];
+
+    
+    
+    
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    id destVc = segue.destinationViewController;
+    
+    if ([destVc isKindOfClass:[WTChatViewController class]]) {
+        WTChatViewController *chatVc = destVc;
+        chatVc.friendJid = sender;
+        
     }
 }
 

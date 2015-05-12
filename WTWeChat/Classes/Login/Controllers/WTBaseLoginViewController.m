@@ -67,12 +67,10 @@
                 WTLog(@"success");
                 // 登录成功来到主界面
                 // 此方法是在子线程里调用,所以要在主线程刷新UI
-                
-                UIStoryboard *storyboard=[UIStoryboard storyboardWithName:@"Main" bundle:nil];
-                
-                
-                self.view.window.rootViewController=storyboard.instantiateInitialViewController;
-                
+                //在IOS7里window是位nil的
+//                UIStoryboard *storyboard=[UIStoryboard storyboardWithName:@"Main" bundle:nil];
+//                self.view.window.rootViewController=storyboard.instantiateInitialViewController;
+                [UIStoryboard showInitialVCWithName:@"Main"];
                 
             }
                 break;

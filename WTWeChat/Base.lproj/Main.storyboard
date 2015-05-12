@@ -16,10 +16,10 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="yfs-0C-Fcy" kind="relationship" relationship="viewControllers" id="hhn-C0-M6A"/>
-                        <segue destination="dRb-be-3Td" kind="relationship" relationship="viewControllers" id="Px0-ED-DVh"/>
-                        <segue destination="UyX-uu-R0e" kind="relationship" relationship="viewControllers" id="Wij-dR-ca2"/>
-                        <segue destination="AxN-fv-ffS" kind="relationship" relationship="viewControllers" id="Nol-DS-SoH"/>
+                        <segue destination="yfs-0C-Fcy" kind="relationship" relationship="viewControllers" id="71z-kg-o5x"/>
+                        <segue destination="dRb-be-3Td" kind="relationship" relationship="viewControllers" id="wLs-1Z-6WB"/>
+                        <segue destination="UyX-uu-R0e" kind="relationship" relationship="viewControllers" id="soc-gP-7JK"/>
+                        <segue destination="AxN-fv-ffS" kind="relationship" relationship="viewControllers" id="MSZ-3U-rMF"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6zO-Qg-BES" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -29,7 +29,7 @@
         <!--消息-->
         <scene sceneID="Amz-Kp-e1U">
             <objects>
-                <tableViewController id="pRN-FM-hAy" userLabel="消息" sceneMemberID="viewController">
+                <tableViewController id="pRN-FM-hAy" userLabel="消息" customClass="WTHistoryViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="5Pu-fA-tNE">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -48,7 +48,31 @@
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Item" id="BSM-cF-JfX"/>
-                    <navigationItem key="navigationItem" title="微信" id="GLh-x2-5Qx"/>
+                    <navigationItem key="navigationItem" title="微信" id="GLh-x2-5Qx">
+                        <barButtonItem key="leftBarButtonItem" style="plain" id="Qsz-e7-vdi">
+                            <view key="customView" contentMode="scaleToFill" id="98l-zd-5CB">
+                                <rect key="frame" x="0.0" y="0.0" width="133" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="ffd-FN-Dgq">
+                                        <rect key="frame" x="8" y="8" width="20" height="20"/>
+                                        <color key="color" red="0.60369460590000001" green="0.94347774620000002" blue="0.49536972280000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    </activityIndicatorView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="正在登陆中...." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rHA-Tb-0aO">
+                                        <rect key="frame" x="42" y="12" width="105" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                        <color key="textColor" red="0.423383326" green="0.76801146529999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="indicatorView" destination="ffd-FN-Dgq" id="uTH-CF-gVY"/>
+                        <outlet property="loadView" destination="98l-zd-5CB" id="4EL-l6-FdF"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Xt-tv-2bg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -113,6 +137,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="QPO-j6-cvv" kind="show" identifier="ChatSegue" id="Lzh-SV-LJX"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="430-zM-dLB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -162,7 +189,25 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xSs-Wa-j5B" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="621" y="-1996"/>
+            <point key="canvasLocation" x="901" y="-2228"/>
+        </scene>
+        <!--聊天界面-->
+        <scene sceneID="YDk-CR-rkZ">
+            <objects>
+                <viewController hidesBottomBarWhenPushed="YES" id="QPO-j6-cvv" userLabel="聊天界面" customClass="WTChatViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="nnK-Rv-2WQ"/>
+                        <viewControllerLayoutGuide type="bottom" id="WHv-wO-nni"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="GSb-c5-Fea">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5oI-wo-bf8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="778" y="-1529"/>
         </scene>
         <!--通讯录-->
         <scene sceneID="YqK-Qc-k8p">
@@ -173,6 +218,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="sIY-kO-rja">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="xKF-i3-dfS" kind="relationship" relationship="rootViewController" id="erk-vJ-Vsn"/>
                     </connections>
